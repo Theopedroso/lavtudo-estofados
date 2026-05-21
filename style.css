@@ -663,3 +663,18 @@ button,input,summary{font:inherit}
     letter-spacing:.38em !important;
   }
 }
+
+/* Section lead text */
+.section-lead{color:var(--muted);font-size:1.05rem;margin:14px 0 0;max-width:620px}
+
+/* Service card label with description for non-feature cards */
+.service-card:not(.feature) .service-label{position:absolute;left:18px;right:18px;bottom:17px;z-index:2;color:#fff}
+.service-card:not(.feature) .service-label strong{position:static;display:block;font-size:1.03rem;font-weight:900}
+.service-card:not(.feature) .service-label p{margin:5px 0 0;font-size:.80rem;color:rgba(255,255,255,.74);line-height:1.42}
+
+/* Text card subtitle */
+.text-card-sub{margin:10px 0 0;color:rgba(255,255,255,.68);font-size:.88rem;font-weight:500}
+
+/* Bridge phrases between sections */
+.section-bridge{background:var(--navy);color:#fff;padding:30px 0;text-align:center}
+.section-bridge p{margin:0;font-size:1.15rem;font-weight:850;letter-spacing:-.015em;color:rgba(255,255,255,.9);font-style:italic}
