@@ -1,3 +1,3 @@
-DEBUG CHECK FINAL - SITE PREMIUM ALTO PADRÃO PERFEITO
+DEBUG CHECK - LOGO CORRIGIDA
 
-OK - Site premium montado, imagens vinculadas, antes/depois revisado, CSS/JS conferidos e sem arquivo faltando.
+OK - Logo trocada para HTML/CSS, sem fundo quadriculado, sem PNG gigante e sem assets quebrados.
