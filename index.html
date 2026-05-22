@@ -328,19 +328,54 @@
     </section>
 
     <!-- ═══════════════════════════════════════════
-         BASTIDORES / VLOG
+         BASTIDORES / VLOG — player premium
     ═══════════════════════════════════════════ -->
-    <section class="vlog-home section">
-      <div class="container vlog-home-grid">
-        <div class="reveal">
-          <span class="kicker dark">Bastidores LavTudo</span>
-          <h2>Veja de perto o cuidado por trás de cada atendimento.</h2>
-          <p>Vídeos curtos mostrando limpeza em ação, equipamentos, rotina, técnicas e bastidores reais dos serviços.</p>
-          <a class="btn btn-dark" href="bastidores.html">Ver bastidores e dicas</a>
+    <section class="vlog-home" id="bastidores">
+      <div class="container">
+        <div class="vlog-header">
+          <div class="vlog-header-text reveal">
+            <span class="kicker">Bastidores LavTudo</span>
+            <h2>Veja de perto o cuidado por trás de cada atendimento.</h2>
+            <p>Vídeos reais mostrando limpeza em ação, equipamentos e resultados dos nossos serviços.</p>
+          </div>
+          <a class="btn btn-outline vlog-cta reveal" href="bastidores.html">Ver todos os bastidores →</a>
         </div>
-        <div class="video-strip reveal">
-          <article><video controls preload="metadata" poster="assets/img/poster-limpeza-sofa.jpg"><source src="assets/videos/bastidores-limpeza-sofa.mp4" type="video/mp4"></video><strong>Higienização em ação</strong></article>
-          <article><video controls preload="metadata" poster="assets/img/poster-ambiente-comercial.jpg"><source src="assets/videos/bastidores-ambiente-comercial.mp4" type="video/mp4"></video><strong>Ambiente comercial</strong></article>
+        <div class="vlog-grid">
+
+          <div class="vcard reveal">
+            <div class="vcard-media">
+              <video preload="metadata" poster="assets/img/poster-limpeza-sofa.jpg" muted playsinline>
+                <source src="assets/videos/bastidores-limpeza-sofa.mp4" type="video/mp4">
+              </video>
+              <button class="vplay-btn" type="button" aria-label="Reproduzir vídeo">
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4.5l13 7.5-13 7.5V4.5z" fill="currentColor"/></svg>
+              </button>
+              <div class="vcard-top"><span class="vcard-tag">Bastidores</span></div>
+              <div class="vcard-progress"><div class="vcard-progress-bar"></div></div>
+            </div>
+            <div class="vcard-info">
+              <strong>Higienização em ação</strong>
+              <p>Veja o processo de limpeza profunda de perto, em tempo real.</p>
+            </div>
+          </div>
+
+          <div class="vcard reveal">
+            <div class="vcard-media">
+              <video preload="metadata" poster="assets/img/poster-ambiente-comercial.jpg" muted playsinline>
+                <source src="assets/videos/bastidores-ambiente-comercial.mp4" type="video/mp4">
+              </video>
+              <button class="vplay-btn" type="button" aria-label="Reproduzir vídeo">
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4.5l13 7.5-13 7.5V4.5z" fill="currentColor"/></svg>
+              </button>
+              <div class="vcard-top"><span class="vcard-tag">Empresarial</span></div>
+              <div class="vcard-progress"><div class="vcard-progress-bar"></div></div>
+            </div>
+            <div class="vcard-info">
+              <strong>Ambiente comercial</strong>
+              <p>Como cuidamos de espaços empresariais com o mesmo padrão de excelência.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -397,16 +432,20 @@
       <div class="container">
         <div class="testimonials-head reveal">
           <span class="kicker dark">Avaliações do Google</span>
-          <h2>Clientes que confiaram na LavTudo.</h2>
-          <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&query=LavTudo+Estofados+S%C3%A3o+Paulo" target="_blank" rel="noopener">Ver avaliações no Google</a>
+          <h2>O que nossos clientes dizem.</h2>
         </div>
-        <div class="testimonial-carousel">
 
-<article class="testimonial-card reveal">
-  <div class="stars">★★★★★</div>
-  <p>"Ótimo trabalho. Super recomendo. Ela veio aqui em casa, usou produtos de qualidade e removeu toda a sujeira e o mau odor do sofá que já estava considerado jogar fora, deixando quase como novo."</p>
-  <strong>Lunnatica</strong>
-</article>
+        <!-- Depoimento em destaque -->
+        <div class="testimonial-featured reveal">
+          <span class="tf-quote-mark" aria-hidden="true">"</span>
+          <blockquote>Ótimo trabalho. Super recomendo. Ela veio aqui em casa, usou produtos de qualidade e removeu toda a sujeira e o mau odor do sofá que já estava considerado jogar fora, deixando quase como novo.</blockquote>
+          <div class="tf-meta">
+            <span class="tf-stars">★★★★★</span>
+            <cite class="tf-author">Lunnatica · Avaliação Google</cite>
+          </div>
+        </div>
+
+        <div class="testimonial-carousel">
 
 <article class="testimonial-card reveal">
   <div class="stars">★★★★★</div>
@@ -449,6 +488,9 @@
   <p>"Excelente profissional, muito atenciosa e competente no que faz. Super recomendo e terei outros trabalhos sempre."</p>
   <strong>Elias Lemos</strong>
 </article>
+        </div>
+        <div class="testimonials-footer reveal">
+          <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&query=LavTudo+Estofados+S%C3%A3o+Paulo" target="_blank" rel="noopener">Ver todas as avaliações no Google →</a>
         </div>
       </div>
     </section>
