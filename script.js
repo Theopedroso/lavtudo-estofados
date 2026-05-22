@@ -194,4 +194,85 @@
     video.addEventListener('play', () => pauseAll(video));
   });
 
+  /* ─── Parallax sutil no hero ─────────────────────── */
+  const heroImg = $('.hero-media img');
+  if (heroImg) {
+    const onHeroScroll = () => {
+      const y = window.scrollY;
+      if (y < window.innerHeight * 1.2) {
+        heroImg.style.transform = `scale(1.07) translateY(${y * 0.14}px)`;
+      }
+    };
+    window.addEventListener('scroll', onHeroScroll, { passive: true });
+    onHeroScroll();
+  }
+
+  /* ─── Demo animado nos sliders Antes/Depois ─────── */
+  const compareCards = $$('.compare-card');
+  if ('IntersectionObserver' in window && compareCards.length) {
+    const sliderDemoObs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const card = entry.target;
+        if (card._demoed) return;
+        card._demoed = true;
+        sliderDemoObs.unobserve(card);
+        const range = $('.compare-range', card);
+        if (!range) return;
+        let v = 50;
+        const animateTo = (target, speed, onDone) => {
+          const dir = target > v ? 1 : -1;
+          const tick = () => {
+            v = Math.round((v + dir * speed) * 10) / 10;
+            const done = dir > 0 ? v >= target : v <= target;
+            if (done) v = target;
+            range.value = v;
+            range.dispatchEvent(new Event('input'));
+            if (!done) requestAnimationFrame(tick);
+            else if (onDone) onDone();
+          };
+          requestAnimationFrame(tick);
+        };
+        setTimeout(() => {
+          animateTo(20, 1.2, () => {
+            setTimeout(() => animateTo(50, 1.0, null), 400);
+          });
+        }, 650);
+      });
+    }, { threshold: 0.55 });
+    compareCards.forEach((card) => sliderDemoObs.observe(card));
+  }
+
+  /* ─── Lightbox com navegação por setas + swipe ───── */
+  const getVisibleItems = () => $$('.gallery-item:not(.hide)');
+
+  const navigateLightbox = (dir) => {
+    if (!lightbox?.classList.contains('open') || !lightboxImg) return;
+    const visible = getVisibleItems();
+    const cur = lightboxImg.src;
+    const idx = visible.findIndex((item) => {
+      const s = item.dataset.img || $('img', item)?.getAttribute('src') || '';
+      return cur.includes(s) || s.includes(cur);
+    });
+    const next = visible[idx + dir];
+    if (!next) return;
+    const img = $('img', next);
+    lightboxImg.src = next.dataset.img || img?.src || '';
+    lightboxImg.alt = img?.alt || 'Imagem da galeria LavTudo';
+  };
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight') navigateLightbox(1);
+    if (event.key === 'ArrowLeft')  navigateLightbox(-1);
+  });
+
+  let touchStartX = 0;
+  lightbox?.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+  lightbox?.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 48) navigateLightbox(dx < 0 ? 1 : -1);
+  }, { passive: true });
+
 })();
