@@ -1235,3 +1235,263 @@ img{image-rendering:auto}
   color:#fff;
   transform:translateY(-1px);
 }
+
+/* ════════════════════════════════════════════════════
+   VCARD — REDESIGN PREMIUM COMPLETO
+════════════════════════════════════════════════════ */
+
+/* Seção */
+.vlog-home{
+  background:linear-gradient(180deg,#010c15 0%,#041421 40%,#061b2b 100%) !important;
+  padding:110px 0 !important;
+  position:relative;
+  overflow:hidden;
+}
+.vlog-home::before{
+  content:"";
+  position:absolute;
+  top:-120px;
+  left:50%;
+  transform:translateX(-50%);
+  width:900px;
+  height:500px;
+  background:radial-gradient(ellipse,rgba(158,200,232,.065) 0%,transparent 68%);
+  pointer-events:none;
+}
+
+/* Header da seção */
+.vlog-header{
+  margin-bottom:60px !important;
+}
+.vlog-header-text h2{
+  font-size:clamp(1.7rem,2.8vw,2.6rem) !important;
+  letter-spacing:-.065em;
+  line-height:1.08;
+}
+
+/* Grid — centralizado com largura contida */
+.vlog-grid{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  gap:24px !important;
+  max-width:880px !important;
+  margin:0 auto !important;
+}
+
+/* Card externo */
+.vcard{
+  border-radius:28px !important;
+  overflow:hidden !important;
+  background:#000 !important;
+  border:none !important;
+  box-shadow:
+    0 2px 0 rgba(255,255,255,.08) inset,
+    0 36px 88px rgba(0,0,0,.58) !important;
+  transition:transform .38s cubic-bezier(.22,1,.36,1), box-shadow .38s ease !important;
+  position:relative;
+}
+.vcard:hover{
+  transform:translateY(-10px) scale(1.012) !important;
+  box-shadow:
+    0 2px 0 rgba(255,255,255,.1) inset,
+    0 52px 110px rgba(0,0,0,.68),
+    0 0 0 1px rgba(158,200,232,.18) !important;
+}
+
+/* Área de mídia */
+.vcard-media{
+  position:relative !important;
+  aspect-ratio:9/16 !important;
+  max-height:none !important;
+  overflow:hidden !important;
+  background:#000 !important;
+  cursor:pointer !important;
+}
+.vcard-media video{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  display:block !important;
+  transition:transform .9s cubic-bezier(.22,1,.36,1) !important;
+}
+.vcard:hover .vcard-media video{
+  transform:scale(1.06) !important;
+}
+
+/* Overlay escuro de fundo (pausa) — mais sutil */
+.vcard-media::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  background:rgba(4,20,33,.18) !important;
+  z-index:2 !important;
+  transition:opacity .4s ease !important;
+  pointer-events:none !important;
+}
+.vcard-media.is-playing::before{
+  opacity:0 !important;
+}
+
+/* Gradiente de baixo para cima — dá base para o texto */
+.vcard-media::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  background:linear-gradient(
+    to top,
+    rgba(4,20,33,.97) 0%,
+    rgba(4,20,33,.82) 22%,
+    rgba(4,20,33,.38) 42%,
+    transparent 62%
+  ) !important;
+  z-index:3 !important;
+  pointer-events:none !important;
+  transition:opacity .5s ease !important;
+}
+.vcard-media.is-playing::after{
+  opacity:.28 !important;
+}
+
+/* Botão play — redesign premium */
+.vplay-btn{
+  position:absolute !important;
+  top:42% !important;
+  left:50% !important;
+  transform:translate(-50%,-50%) !important;
+  z-index:5 !important;
+  width:72px !important;
+  height:72px !important;
+  border-radius:50% !important;
+  background:rgba(255,255,255,.96) !important;
+  border:none !important;
+  cursor:pointer !important;
+  display:grid !important;
+  place-items:center !important;
+  color:var(--navy) !important;
+  box-shadow:0 14px 44px rgba(0,0,0,.52), 0 0 0 0 rgba(255,255,255,.3) !important;
+  transition:transform .3s cubic-bezier(.22,1,.36,1), opacity .3s ease, box-shadow .3s ease !important;
+}
+/* Anel pulsante */
+.vplay-btn::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:-10px !important;
+  border-radius:50% !important;
+  border:2.5px solid rgba(255,255,255,.28) !important;
+  animation:vplaypulse 2.6s ease-in-out infinite !important;
+}
+@keyframes vplaypulse{
+  0%,100%{transform:scale(1);opacity:.9}
+  50%{transform:scale(1.18);opacity:0}
+}
+.vplay-btn svg{
+  margin-left:4px !important;
+  display:block !important;
+}
+.vplay-btn:hover{
+  transform:translate(-50%,-50%) scale(1.14) !important;
+  background:#fff !important;
+  box-shadow:0 20px 56px rgba(0,0,0,.6), 0 0 0 18px rgba(255,255,255,.09) !important;
+}
+.vplay-btn.is-playing{
+  opacity:0 !important;
+  pointer-events:none !important;
+}
+.vplay-btn.is-playing::before{
+  display:none !important;
+}
+.vcard-media:hover .vplay-btn.is-playing{
+  opacity:.82 !important;
+  pointer-events:auto !important;
+}
+
+/* Tag de categoria */
+.vcard-top{
+  position:absolute !important;
+  top:18px !important;
+  left:18px !important;
+  z-index:6 !important;
+}
+.vcard-tag{
+  background:rgba(4,20,33,.68) !important;
+  backdrop-filter:blur(18px) !important;
+  -webkit-backdrop-filter:blur(18px) !important;
+  border:1px solid rgba(255,255,255,.22) !important;
+  color:#fff !important;
+  border-radius:999px !important;
+  padding:6px 14px !important;
+  font-size:.68rem !important;
+  font-weight:900 !important;
+  text-transform:uppercase !important;
+  letter-spacing:.13em !important;
+}
+
+/* Texto overlaid no rodapé do vídeo */
+.vcard-overlay{
+  position:absolute !important;
+  bottom:0 !important;
+  left:0 !important;
+  right:0 !important;
+  padding:22px 22px 22px !important;
+  z-index:4 !important;
+  pointer-events:none !important;
+}
+.vcard-overlay strong{
+  display:block !important;
+  color:#fff !important;
+  font-size:1.12rem !important;
+  font-weight:900 !important;
+  letter-spacing:-.03em !important;
+  line-height:1.2 !important;
+  margin-bottom:6px !important;
+  text-shadow:0 2px 14px rgba(0,0,0,.5) !important;
+}
+.vcard-overlay p{
+  margin:0 !important;
+  color:rgba(255,255,255,.68) !important;
+  font-size:.84rem !important;
+  line-height:1.5 !important;
+}
+
+/* Barra de progresso */
+.vcard-progress{
+  position:absolute !important;
+  bottom:0 !important;
+  left:0 !important;
+  right:0 !important;
+  height:3px !important;
+  background:rgba(255,255,255,.12) !important;
+  z-index:6 !important;
+}
+.vcard-progress-bar{
+  height:100% !important;
+  width:0% !important;
+  background:linear-gradient(90deg,var(--cyan),#c8f0ff) !important;
+  border-radius:999px !important;
+  transition:width .18s linear !important;
+}
+
+/* Remove old vcard-info styles */
+.vcard-info{display:none !important}
+
+/* Responsive */
+@media(max-width:860px){
+  .vlog-grid{
+    grid-template-columns:1fr !important;
+    max-width:440px !important;
+  }
+  .vcard-media{
+    aspect-ratio:4/5 !important;
+  }
+  .vplay-btn{
+    width:64px !important;
+    height:64px !important;
+  }
+}
+@media(max-width:560px){
+  .vlog-home{padding:72px 0 !important}
+  .vlog-grid{max-width:100% !important}
+  .vcard-media{aspect-ratio:3/4 !important}
+  .vplay-btn{width:58px !important;height:58px !important}
+  .vcard-overlay strong{font-size:1rem !important}
+}
