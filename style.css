@@ -1269,12 +1269,12 @@ img{image-rendering:auto}
   line-height:1.08;
 }
 
-/* Grid — 3 cards, centralizado */
+/* Grid — 2 cards centralizados */
 .vlog-grid{
   display:grid !important;
-  grid-template-columns:repeat(3,1fr) !important;
-  gap:20px !important;
-  max-width:1080px !important;
+  grid-template-columns:1fr 1fr !important;
+  gap:24px !important;
+  max-width:860px !important;
   margin:0 auto !important;
 }
 
@@ -1474,18 +1474,12 @@ img{image-rendering:auto}
 /* Remove old vcard-info styles */
 .vcard-info{display:none !important}
 
-/* Responsive — 3 cards */
-@media(max-width:1000px){
-  .vlog-grid{
-    grid-template-columns:1fr 1fr !important;
-    max-width:700px !important;
-  }
-}
+/* Responsive — 2 cards */
 @media(max-width:860px){
   .vlog-grid{
-    grid-template-columns:1fr 1fr !important;
-    max-width:600px !important;
-    gap:16px !important;
+    grid-template-columns:1fr !important;
+    max-width:420px !important;
+    gap:20px !important;
   }
   .vcard-media{
     aspect-ratio:4/5 !important;
@@ -1497,10 +1491,7 @@ img{image-rendering:auto}
 }
 @media(max-width:560px){
   .vlog-home{padding:72px 0 !important}
-  .vlog-grid{
-    grid-template-columns:1fr !important;
-    max-width:100% !important;
-  }
+  .vlog-grid{max-width:100% !important}
   .vcard-media{aspect-ratio:3/4 !important}
   .vplay-btn{width:58px !important;height:58px !important}
   .vcard-overlay strong{font-size:1rem !important}
