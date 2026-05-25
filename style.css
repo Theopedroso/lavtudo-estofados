@@ -1929,3 +1929,228 @@ img{image-rendering:auto}
 @media(max-width:480px){
   .corp-checklist{grid-template-columns:1fr 1fr}
 }
+
+
+/* ════════════════════════════════════════════════════
+   UNIFORMIZAÇÃO DE CORES + DESIGN UPGRADE FINAL
+════════════════════════════════════════════════════ */
+
+/* ── Paleta principal unificada ─────────────────────
+   Navy  #061b2b  ← fundos escuros, textos
+   Cyan  #9ec8e8  ← destaques em fundo escuro
+   Blue  #5b7292  ← destaques em fundo claro, CTAs secundários
+   Green #25d366  ← WhatsApp / CTAs principais
+   Paper #f4f6f8  ← fundo de seções claras
+   ──────────────────────────────────────────────── */
+
+/* Header — sem gradiente dourado/gold, sombra mais limpa */
+:root{
+  --gold:#5b7292; /* substitui dourado por azul-marca */
+}
+
+/* Kicker — consistência total */
+.kicker{color:var(--cyan)}
+.kicker.dark{color:var(--blue-brand)}
+.kicker::before{background:linear-gradient(90deg,currentColor,transparent)}
+
+/* ── Hero — overlay mais limpo e escuro ────────────── */
+.hero-overlay{
+  background:
+    linear-gradient(112deg,
+      rgba(4,20,33,.97) 0%,
+      rgba(4,20,33,.88) 30%,
+      rgba(4,20,33,.52) 58%,
+      rgba(4,20,33,.08) 100%
+    ) !important;
+}
+
+/* ── Botões — espaçamento mais generoso ────────────── */
+.btn{
+  padding:16px 28px;
+  border-radius:12px;
+  letter-spacing:.05em;
+}
+.btn-whatsapp{
+  background:#25d366 !important;
+  border-color:#25d366 !important;
+  box-shadow:0 10px 30px rgba(37,211,102,.25) !important;
+}
+.btn-whatsapp:hover{
+  background:#1db954 !important;
+  box-shadow:0 18px 44px rgba(37,211,102,.40) !important;
+}
+.btn-blue{
+  background:var(--navy) !important;
+  border-color:transparent !important;
+  box-shadow:none !important;
+  color:#fff !important;
+}
+.btn-blue:hover{
+  background:#0a2e47 !important;
+  transform:translateY(-2px) !important;
+}
+.btn-dark{
+  background:var(--navy);
+  color:#fff;
+  border-radius:12px;
+}
+.btn-dark:hover{background:#0a2e47;transform:translateY(-2px)}
+
+/* ── Hero h1 — mais impactante ──────────────────────── */
+.hero h1{
+  font-size:clamp(3rem,6vw,6rem) !important;
+  letter-spacing:-.09em !important;
+  line-height:.96 !important;
+}
+@media(max-width:860px){
+  .hero h1{font-size:clamp(2.4rem,8.5vw,3.8rem) !important;line-height:1.02 !important}
+}
+@media(max-width:560px){
+  .hero h1{font-size:clamp(2rem,8vw,2.8rem) !important;line-height:1.06 !important}
+}
+
+/* ── Comparação — cards mais limpos ──────────────────── */
+.compare-card{
+  background:rgba(255,255,255,.06) !important;
+  border:1px solid rgba(255,255,255,.12) !important;
+  border-radius:24px !important;
+  padding:12px !important;
+}
+.compare-wrap{border-radius:18px !important}
+.compare-info strong{
+  color:#fff;
+  font-size:1.05rem !important;
+  letter-spacing:-.025em !important;
+}
+.compare-info p{
+  color:rgba(255,255,255,.60) !important;
+  font-size:.84rem !important;
+  margin:.35rem 0 0 !important;
+}
+
+/* ── Services — card mais clean ─────────────────────── */
+.service-card{border-radius:20px !important;border:none !important}
+.service-card::after{
+  background:linear-gradient(
+    0deg,
+    rgba(4,20,33,.95) 0%,
+    rgba(4,20,33,.6) 38%,
+    rgba(4,20,33,.04) 70%,
+    transparent 100%
+  ) !important;
+}
+.text-card{background:linear-gradient(150deg,#061b2b,#0d3050) !important}
+
+/* ── Enterprise — seção mais coesa ──────────────────── */
+.enterprise-section{
+  background:linear-gradient(160deg,#061b2b 0%,#082b45 100%);
+}
+.enterprise-v2-copy h2{
+  font-size:clamp(1.8rem,2.8vw,2.8rem) !important;
+}
+.enterprise-v2-copy p{
+  font-size:1.02rem !important;
+  color:rgba(255,255,255,.72) !important;
+}
+
+/* ── Impermeabilização — seção equilibrada ───────────── */
+.waterproof-section{background:#fff}
+.waterproof-copy h2{color:var(--navy)}
+.mini-benefits span{
+  background:#f0f7fb !important;
+  border-color:rgba(91,114,146,.18) !important;
+  color:var(--navy) !important;
+  font-size:.88rem !important;
+  font-weight:850 !important;
+}
+.mini-benefits span::before{color:#25d366 !important}
+
+/* ── Quem Somos — fundo limpo ────────────────────────── */
+.about-process{background:var(--paper) !important}
+.about-block{box-shadow:0 20px 60px rgba(8,43,69,.10) !important}
+.about-text p{color:var(--muted) !important;line-height:1.7 !important}
+.about-diferenciais li{color:var(--navy) !important;font-size:.93rem !important}
+.why-block{background:linear-gradient(150deg,var(--navy),#0d3050) !important}
+
+/* ── Avaliações — cards uniformes ────────────────────── */
+.testimonials-section{background:var(--paper) !important}
+.testimonial-featured{
+  background:linear-gradient(150deg,var(--navy),#0d3050) !important;
+}
+.testimonial-card{
+  background:#fff !important;
+  border:1px solid var(--line) !important;
+  border-radius:20px !important;
+  padding:24px !important;
+  box-shadow:0 8px 32px rgba(8,43,69,.07) !important;
+}
+.testimonial-card::before{color:var(--blue-ice) !important}
+.testimonial-card strong{
+  color:var(--blue-brand) !important;
+  font-size:.82rem !important;
+  letter-spacing:.05em !important;
+}
+.stars{font-size:1rem !important;letter-spacing:3px !important;color:#ffc42e !important}
+.tf-stars{color:#ffc42e !important}
+
+/* ── FAQ — mais clean ───────────────────────────────── */
+.faq-section{background:#fff !important}
+details{
+  background:#f8fafc !important;
+  border:1px solid rgba(91,114,146,.16) !important;
+  border-radius:16px !important;
+}
+details[open]{background:#f1f7fb !important;box-shadow:0 8px 30px rgba(8,43,69,.08) !important}
+summary{color:var(--navy) !important;font-size:.97rem !important}
+details[open] summary{color:var(--blue-brand) !important}
+
+/* ── CTA Final — fundo mais escuro e limpo ───────────── */
+.final-cta{
+  background:linear-gradient(150deg,#051525,#082438) !important;
+}
+.contact-form-wrap{
+  background:rgba(255,255,255,.06) !important;
+  border-color:rgba(255,255,255,.12) !important;
+}
+
+/* ── Footer — mais escuro e limpo ───────────────────── */
+.site-footer{background:#030e18 !important}
+.footer-v2{border-color:rgba(255,255,255,.08) !important}
+.footer-info-item small{color:var(--cyan) !important;font-size:.62rem !important}
+.footer-info-item p{color:rgba(255,255,255,.62) !important}
+.footer-bottom{background:#020c14}
+.footer-bottom p{color:rgba(255,255,255,.35) !important}
+
+/* ── Floating WA — ícone maior ───────────────────────── */
+.floating-whatsapp{
+  width:60px !important;height:60px !important;
+  background:#25d366 !important;
+  box-shadow:0 12px 36px rgba(37,211,102,.40) !important;
+  border:none !important;
+}
+.floating-whatsapp svg{width:28px !important;height:28px !important}
+
+/* ── Scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar-thumb{background:var(--blue-brand) !important}
+
+/* ── h2 global — mais impactante ────────────────────── */
+h2{
+  letter-spacing:-.07em !important;
+  line-height:1.02 !important;
+}
+
+/* ── Section headings — tamanho consistente ──────────── */
+.results-top h2,
+.section-head h2,
+.waterproof-copy h2,
+.enterprise-v2-copy h2,
+.why-block h2,
+.testimonials-head h2,
+.faq-copy h2,
+.final-section-head h2{
+  font-size:clamp(2rem,3.5vw,3.2rem) !important;
+  letter-spacing:-.075em !important;
+}
+.about-text h2{
+  font-size:clamp(1.7rem,2.8vw,2.6rem) !important;
+}
