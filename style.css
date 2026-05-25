@@ -2154,3 +2154,55 @@ h2{
 .about-text h2{
   font-size:clamp(1.7rem,2.8vw,2.6rem) !important;
 }
+
+
+/* ════════════════════════════════════════════════════
+   LOGO PNG REAL — HEADER & FOOTER
+════════════════════════════════════════════════════ */
+
+/* Link wrapper — sem decoração */
+.brand-png-link{
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
+  text-decoration:none;
+  line-height:0;
+}
+
+/* Imagem base */
+.brand-png{
+  display:block;
+  height:auto;
+  object-fit:contain;
+  object-position:left center;
+  max-width:100%;
+}
+
+/* ── Header: logo escura sobre fundo branco ────────
+   A PNG tem texto preto → combina perfeitamente     */
+.header-logo-png{
+  width:clamp(140px,16vw,210px);
+  max-height:50px;
+}
+
+/* ── Footer: inverte para branco sobre fundo escuro */
+.footer-logo-png{
+  width:clamp(140px,16vw,200px);
+  max-height:54px;
+  filter:brightness(0) invert(1);
+  opacity:.90;
+  transition:opacity .25s;
+}
+.footer-logo-link:hover .footer-logo-png{
+  opacity:1;
+}
+
+/* Responsive */
+@media(max-width:860px){
+  .header-logo-png{width:clamp(130px,28vw,190px);max-height:44px}
+  .footer-logo-png{width:clamp(130px,28vw,180px);max-height:48px}
+}
+@media(max-width:480px){
+  .header-logo-png{width:clamp(120px,36vw,160px);max-height:40px}
+  .footer-logo-png{width:clamp(120px,36vw,155px);max-height:44px}
+}
